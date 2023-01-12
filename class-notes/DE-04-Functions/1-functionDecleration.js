@@ -62,3 +62,8 @@ function tekCiftSayi(x) {
 }
 
 
+function yazdir() {
+
+    console.log("nasilsiniz");
+
+
