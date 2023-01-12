@@ -66,4 +66,4 @@ function yazdir() {
 
     console.log("nasilsiniz");
 
-
+}
