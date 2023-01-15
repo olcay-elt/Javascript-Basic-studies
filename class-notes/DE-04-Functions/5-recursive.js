@@ -23,7 +23,7 @@ const toplamlar = (n) => {
     if (n < 1) return n;
 
     else return toplamlar(n - 1) + n;
-};
+}
 console.log(toplamlar(6));
 
 
@@ -46,3 +46,5 @@ const fibo = (n) => {
 }
 
 console.log(fibo(8));
+
+
