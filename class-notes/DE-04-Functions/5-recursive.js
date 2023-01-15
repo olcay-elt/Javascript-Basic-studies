@@ -48,6 +48,9 @@ const fibo = (n) => {
 console.log(fibo(8));
 
 
+
+//!  ÖDEVLER *********
+
 //!Soru-1.Ücgenin Alani*****
 
 const area = (t, h) => (t * h) / 2
@@ -82,8 +85,38 @@ console.log(küp(sayi2))
 
 //!Soru-2:  c) ÜsAl ******
 
-const sayi3 = +prompt("Bir sayi giriniz")
+const x = +prompt("Bir sayi giriniz")
 
-const usAl = (sayi3) => Math.pow(sayi3)
+const y = +prompt("Bir sayi giriniz")
+
+let sayi3;
+
+const usAl = (sayi3) => x ** y
 
 console.log(usAl(sayi3))
+
+
+
+
+
+
+
+
+//!Soru-3: Artik yil**********
+const yil = +prompt("Yili giriniz")
+
+const hesapla = function (yil) {
+
+    let sonuc;
+
+    if (yil % 4 == 0 && yil % 100 != 0 || yil % 400 == 0)
+
+        sonuc = ("Artik yildir")
+
+    else
+        sonuc = ("Artik yil degildir")
+
+    return sonuc
+}
+
+console.log(hesapla(yil))
