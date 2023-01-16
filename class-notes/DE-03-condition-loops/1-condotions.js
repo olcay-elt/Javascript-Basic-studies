@@ -55,9 +55,11 @@ const maas = +prompt("10 aylık maasınızı  giriniz")
 const kredi = maas - borc >= 5000 ? "🥳 kredi alabilir" : " 😞 kredi alamaz"
 console.log(kredi);
 
-console.log("-------------------------------------");
+
+
+
 console.log("==SWITCH-CASE== 4 Islem Hesap Makinesi");
-console.log("-------------------------------------");
+
 
 
 const sayi1 = Number(prompt("switch-case için 1.sayıyı giriniz"));

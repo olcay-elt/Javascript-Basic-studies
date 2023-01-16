@@ -49,7 +49,7 @@ console.log(fibo(8));
 
 
 
-//!  ÖDEVLER *********
+//!  ÖDEVLER 2   *********
 
 //!Soru-1.Ücgenin Alani*****
 
@@ -120,3 +120,96 @@ const hesapla = function (yil) {
 }
 
 console.log(hesapla(yil))
+
+
+
+
+//!  ÖDEVLER 1   *********
+
+//!Soru-1: Not - Harf Programi  **********
+
+const puan = +prompt("Sinav notunu giriniz")
+
+const harf = function (puan) {
+
+    let sonuc;
+
+    if (puan < 0 || puan > 100)
+        sonuc = ("Lütfen 0 ile 100 arasi bir puan giriniz")
+
+    else if (0 <= puan <= 25)
+        sonuc = ("FF")
+
+    else if (26 <= puan <= 45)
+        sonuc = ("DD")
+
+    else if (46 <= puan <= 65)
+        sonuc = ("CC")
+
+    else if (66 <= puan <= 75)
+        sonuc = ("BB")
+
+    else if (76 <= puan <= 90)
+        sonuc = ("BA")
+
+    else if (91 <= puan <= 100)
+        sonuc = ("AA")
+
+
+    return sonuc
+}
+
+console.log(harf(puan));
+
+
+
+
+//!Soru-2: Switch-case  **********
+
+const ay = prompt("Bir ay seciniz ")
+let sira;
+
+switch (sira) {
+
+    case "Ocak":
+        ay = "1";
+        break;
+    case "2":
+        ay = "Şubat";
+        break;
+    case 3:
+        ay = "Mart";
+        break;
+    case "4":
+        ay = "Nisan";
+        break;
+    case "5":
+        ay = "Mayıs";
+        break;
+    case "6":
+        ay = "Haziran";
+        break;
+    case "7":
+        ay = "Temmuz";
+        break;
+    case "8":
+        ay = "Ağustos";
+        break;
+    case "9":
+        ay = "Eylül";
+        break;
+    case "10":
+        ay = "Ekim";
+        break;
+    case "11":
+        ay = "Kasım";
+        break;
+    case "12":
+        ay = "Aralık";
+        break;
+
+}
+
+console.log(sira);
+
+
