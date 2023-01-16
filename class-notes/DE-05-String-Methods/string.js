@@ -82,3 +82,48 @@ const cümle1 = "to be or not to be, that is The questions."
 console.log(cümle1.indexOf("be")); //3
 console.log(cümle1.lastIndexOf("be")); //16
 console.log(cümle1.indexOf("this"));  //-1 yoktur
+
+
+
+
+
+// *=========================================================
+// *          search()
+// *=========================================================
+
+const cümle2 = "to be or not 9 to be, that is The questions.";
+
+console.log(cümle2.search(/[A-Z]/));//28
+console.log(cümle2.search(/[a-z]/));//0
+console.log(cümle2.search(/[0-9]/));//13
+console.log(cümle2.search(/[.]/));//43
+console.log(cümle2.indexOf("."));//43
+console.log(cümle2.search(/[^a-z]/));//2 boslugu döndürdü
+console.log(cümle2.search(/[0-9A-Za-z]/));//0
+// regex=regular expression /[]/
+
+
+
+
+// *=========================================================
+// *          startsWith(), endWith()  ---case sensitive
+// *=========================================================
+
+const sarki = "Salina salina sinsice olurum sana!"
+
+console.log(sarki.startsWith("sa")); //false
+console.log(sarki.startsWith("Sa")); //True 
+console.log(sarki.startsWith("salina", 7)); //True
+console.log(sarki.endWith("salina", 7)); //True
+
+
+
+
+//* ----------------------------------------------------------
+//*  slice(beginIndex, endIndex)
+//*  substring(beginIndex, endIndex)
+//* ----------------------------------------------------------
+
+const veysel = "UZUN INCE BIR YOLDAYIM GIDIYORUM GÜNDÜZ GECE"
+console.log(veysel.slice(10));
+console.log(veysel.slice(10, 21));//UZUN
