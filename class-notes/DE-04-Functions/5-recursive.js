@@ -174,7 +174,7 @@ switch (month) {
     case "January":
         monthNo = 1;
         break;
-    case "Ferruary":
+    case "February":
         monthNo = 2;
         break;
     case "March":
