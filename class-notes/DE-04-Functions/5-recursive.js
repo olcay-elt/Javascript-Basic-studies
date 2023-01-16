@@ -124,7 +124,7 @@ console.log(hesapla(yil))
 
 
 
-//!  ÖDEVLER 1   *********
+//!  ÖDEVLER 1   *********  
 
 //!Soru-1: Not - Harf Programi  **********
 
@@ -166,50 +166,63 @@ console.log(harf(puan));
 
 //!Soru-2: Switch-case  **********
 
-const ay = prompt("Bir ay seciniz ")
-let sira;
+const month = prompt("Enter the month");
 
-switch (sira) {
+let monthNo;
 
-    case "Ocak":
-        ay = "1";
+switch (month) {
+    case "January":
+        monthNo = 1;
         break;
-    case "2":
-        ay = "Şubat";
+    case "Ferruary":
+        monthNo = 2;
         break;
-    case 3:
-        ay = "Mart";
+    case "March":
+        monthNo = 3;
         break;
-    case "4":
-        ay = "Nisan";
+    case "April":
+        monthNo = 4;
         break;
-    case "5":
-        ay = "Mayıs";
+    case "May":
+        monthNo = 5;
         break;
-    case "6":
-        ay = "Haziran";
+    case "June":
+        monthNo = 6;
         break;
-    case "7":
-        ay = "Temmuz";
+    case "July":
+        monthNo = 7;
         break;
-    case "8":
-        ay = "Ağustos";
+    case "August":
+        monthNo = 8;
         break;
-    case "9":
-        ay = "Eylül";
+    case "September":
+        monthNo = 9;
         break;
-    case "10":
-        ay = "Ekim";
+    case "October":
+        monthNo = 10;
         break;
-    case "11":
-        ay = "Kasım";
+    case "November":
+        monthNo = 11;
         break;
-    case "12":
-        ay = "Aralık";
+    case "December":
+        monthNo = 12;
         break;
-
+    default:
+        alert("Not defined");
+        break;
 }
 
-console.log(sira);
+console.log(`${month} is ${monthNo}th month`);
 
+
+
+//!Soru-4: Tek-Cift ( Ternary)  **********
+
+const number = +prompt("Enter a Number")
+const oddEven = function (number) {
+
+    return number % 2 == 0 ? "Even" : "Odd"
+}
+
+console.log(oddEven(number))
 
