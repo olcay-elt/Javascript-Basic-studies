@@ -166,3 +166,10 @@ if (sayilar2.includes(sayiString) == false && sayilar2.includes(sayiNumber) == f
 }
 //*yukarıdaki if lerin ikisinin de false olması durumunda alttaki kod yazılabilir
 if (sayilar2.includes(sayiString) == false && sayilar2.includes(sayiNumber) == false) { console.log("aradığınız sayı dizide yok"); }
+
+
+
+
+//? ["Armut", "Ayva", "Kavun", "Kivi", "Muz", "karpuz", "Cilek"]
+
+console.log(meyveler[2].split("").reverse().join(""));
