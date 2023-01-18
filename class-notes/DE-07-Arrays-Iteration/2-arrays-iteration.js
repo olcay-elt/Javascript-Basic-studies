@@ -159,3 +159,13 @@ console.log(salaries.reduce((toplam, diziEleman) => toplam + diziEleman, 0))
 
 //*salaries in elemanlarının çarpımı
 console.log(salaries.reduce((carpim, diziEleman) => carpim * diziEleman, 1))
+
+
+
+
+
+
+
+//?     ASSIGNMENTS **********************
+
+//! 1) 
