@@ -240,3 +240,9 @@ for (let i in insanlar) {
 // insanlar["JohnKişisi"].salary
 // insanlar["CanKişisi"].salary
 // insanlar["SteveKişisi"].salary
+
+
+
+
+
+
