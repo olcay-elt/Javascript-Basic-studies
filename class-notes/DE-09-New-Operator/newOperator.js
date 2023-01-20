@@ -141,4 +141,15 @@ const futbol = () => {
 
 //*REST OBJECT***************************************
 
-const { pName, ...gerisi } = personel 
+const { pName, ...gerisi } = personel
+
+
+const personel2 = {
+    pName: "Johny",
+    surname: "Deep",
+    job: "actor",
+    age: 55,
+};
+
+const b = { ...personel2, job: "DAD" }
+console.log(b);
