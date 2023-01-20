@@ -28,3 +28,9 @@ paragraf.style.padding = "5px"
 //* tag ismiyle çağırıyoruz.aynı tag den çok olacağı için index le hangisini seçtiğimizi belirtiyoruz (HTMLCollection- Array özellikleri gösterir)
 //*================================================
 //*example 3 (img style)
+
+const resim = document.getElementsByTagName("resim")
+console.log(resim);
+
+resim[0].style.width = "200px"
+resim[1].style.border = "5px solid black"
