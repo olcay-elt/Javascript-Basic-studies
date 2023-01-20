@@ -51,3 +51,94 @@ const { marka: marka1, renk: renk1 } = car2
 console.log(marka1, renk1);
 
 //!!!!JavaScript'te, iterable protokolü uygulamadıkça Objects iterable değildir. Bu nedenle, bir object in özellikleri üzerinde iterate yapmak için for…of (forEach, map, filter da) kullanamazsınız. sadece klasik for döngüsü ve for in kullanılabilir
+
+//*example1 object-object iterable (gezinme)
+
+for (let i in arabalar) {
+    console.log(i);
+    console.log(arabalar[i].marka);
+}
+
+//*example2 object-array iterable (gezinme)
+
+const people = [
+    {
+        name: "Hakan",
+        surname: "Kara",
+        job: "developer",
+        age: 30,
+    },
+    {
+        name: "Sefa",
+        surname: "Doganay",
+        job: "devops",
+        age: 25,
+    },
+    {
+        name: "Adem",
+        surname: "Havva",
+        job: "data-science",
+        age: 35,
+    },
+    {
+        name: "Olcay",
+        surname: "Halk",
+        job: "developer",
+        age: 28,
+    },
+    {
+        name: "Ömer",
+        surname: "Bilir",
+        job: "team lead",
+        age: 34,
+    },
+];
+
+people.forEach((item) => {
+    // console.log(item.name);
+    // console.log(item.surname);
+    // console.log(item.job);
+    // console.log(item.age);
+
+    const { name, surname, age, job } = item;
+    console.log(name);
+    console.log(surname);
+    console.log(age);
+    console.log(job);
+});
+
+//? fonksiyonlar object parametreleri dest edebilir
+
+//* fonksiyon icinde destructuring
+
+const futbol = () => {
+
+}
+
+//* ======================================================
+//*  DESTRUCTURING (ARRAY)
+//* ======================================================
+// const names = ["Ahmet", "Mehmet", "İsmet", "Saffet"]
+
+// //*Classical
+// const mehmet = names[1] //* indexing
+
+// const [p1, p2, , p4] = names
+// console.log(p1, p2, p4)
+
+
+//*======================================================
+//*   NEW GENERATION OPERATORS: SPREAD OR REST (...)
+//* ======================================================
+
+//? ------------------------------------------------------
+//?  REST =>>[...name]=diziden (ya da object den) alınmayan, geri kalanları yeni bir (diziyse) diziye,(object se)object e atıyor
+//? ------------------------------------------------------
+
+
+//! 1- Bir dizi veya object'deki bazi degerlerden geri kalanlarini
+//!    ayri dizi yada objelere kopyalanmasini saglayabilir.
+
+//*REST OBJECT***************************************
+
+const { pName, ...gerisi } = personel 
