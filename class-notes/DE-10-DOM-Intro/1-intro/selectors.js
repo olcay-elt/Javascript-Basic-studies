@@ -53,6 +53,18 @@ for (let i = 0; i < baslik.length; i++) {
     baslik[i].style.textAlign = "center"
 }
 
-const mani = document.getElementsByName("title")
-console.log(mani);
-mani[0].style.color
+document.title = " DOM MANUPULATION💜"
+
+const oldTag = document.getElementById("oldTag")
+const newTag = document.createElement("a")
+newTag.innerText = "DOM is VERY EASY"
+
+oldTag.parentNode.replaceChild(newTag, oldTag)
+newTag.style.color = "blue"
+newTag.style.fontSize = "40px"
+newTag.style.fontWeight = "bold"
+newTag.style.display = "block"
+newTag.style.textAlign = "center"
+
+const body = document.getElementById("body")
+body.style.backgroundImage = "linear-gradient(to right, green , yellow)"
