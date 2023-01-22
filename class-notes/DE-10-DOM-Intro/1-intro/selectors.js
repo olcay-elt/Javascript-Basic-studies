@@ -53,7 +53,12 @@ for (let i = 0; i < baslik.length; i++) {
     baslik[i].style.textAlign = "center"
 }
 
+
+//* Assignments 1
+
 document.title = " DOM MANUPULATION💜"
+
+//* Assignments 2
 
 const oldTag = document.getElementById("oldTag")
 const newTag = document.createElement("a")
@@ -65,6 +70,9 @@ newTag.style.fontSize = "40px"
 newTag.style.fontWeight = "bold"
 newTag.style.display = "block"
 newTag.style.textAlign = "center"
+
+
+//* Assignments 3
 
 const body = document.getElementById("body")
 body.style.backgroundImage = "linear-gradient(to right, green , yellow)"
