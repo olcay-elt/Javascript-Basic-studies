@@ -52,3 +52,7 @@ for (let i = 0; i < baslik.length; i++) {
     baslik[i].style.color = "purple"
     baslik[i].style.textAlign = "center"
 }
+
+const mani = document.getElementsByName("title")
+console.log(mani);
+mani[0].style.color
