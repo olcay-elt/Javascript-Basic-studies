@@ -162,7 +162,7 @@ document.querySelector(".btn").onclick = () => {
     // 2-h1 in backgroundColor u için random sayıyla diziden bir renk daha seçip background rengi verilsin
 }
 
-//* Assignments 1
+
 
 
 
