@@ -21,3 +21,35 @@
 const header = document.querySelector(".header")
 const mavi = () => header.style.color = "blue"
 const kirmizi = () => header.style.color = "red"
+
+//* METHOD-3 ( sadece js sayfasinda yazilan kod) 1. yol
+
+//*example 1 
+document.querySelector(".H2").onmouseover = () => {
+    document.querySelector("#badi").style.color = "pink"
+}
+
+const baslik = document.querySelector(".H1")
+baslik.onmouseover = () => { baslik.style.color = "orange" }
+
+//*example 2 onclick-ondblclick
+
+const birinci = document.querySelector(".bir")
+const ikinci = document.querySelector(".iki")
+
+birinci.onclick = () => {
+    birinci.src = "./img/js2.png";
+    ikinci.src = "./img/js.png";
+}
+
+ikiinci.onclick = () => {
+    birinci.src = "./img/js.png";
+    ikinci.src = "./img/js2.png";
+}
+
+birinci.ondblclick = () => {
+    birinci.src = "./img/winter1.jpg";
+    ikinci.src = "./img/winter2.webp";
+}
+
+
