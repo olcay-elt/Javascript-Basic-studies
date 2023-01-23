@@ -149,4 +149,14 @@ const renkler = [
     "YellowGreen",
 ];
 
-const rastgele = Math.floor(Math.random() * renkler.length)
+document.querySelector(".btn").onclick = () => {
+
+    const rastgele = Math.floor(Math.random() * renkler.length);
+    // console.log(rastgele);
+
+    // console.log(renkler[rastgele]);
+    document.querySelector("body").style.backgroundColor = renkler[rastgele]
+
+    // 1-seçilen renk h1 in içindeki span de yazsın ve onun da color u seçilen renkte olsun
+    // 2-h1 in backgroundColor u için random sayıyla diziden bir renk daha seçip background rengi verilsin
+}
