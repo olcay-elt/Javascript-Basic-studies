@@ -156,7 +156,7 @@ document.querySelector(".btn").onclick = () => {
 
     // console.log(renkler[rastgele]);
     document.querySelector("body").style.backgroundColor = renkler[rastgele]
-    renk.textContent = "renkler[rastgele]"
+    H1.textContent = "renkler[rastgele]
 
     // 1-seçilen renk h1 in içindeki span de yazsın ve onun da color u seçilen renkte olsun
     // 2-h1 in backgroundColor u için random sayıyla diziden bir renk daha seçip background rengi verilsin
