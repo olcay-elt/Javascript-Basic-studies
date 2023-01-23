@@ -164,9 +164,6 @@ document.querySelector(".btn").onclick = () => {
 
 
 
-
-
-
 //* Assignments 2
 
 const rastgele2 = Math.floor(Math.random() * renkler.length);
