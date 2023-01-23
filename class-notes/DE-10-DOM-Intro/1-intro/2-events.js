@@ -52,4 +52,27 @@ birinci.ondblclick = () => {
     ikinci.src = "./img/winter2.webp";
 }
 
+//* example 3 (buton onclick)
+const btn = document.querySelector("#btn")
+btn.onclick = () => {
+    document.querySelector("#badi").style.backgroundImage = "linear-gradient(to right,purple, gray)";
 
+    btn.textContent = "SEARCH"
+    btn.style.color = "aquamarine"
+    btn.style.fontSize = "30px"
+}
+
+//!aynı element e bir spesific bir genel olarak onmouseover atanmışsa,  spesific olan geneli ezer.
+//!aynı element e hem onclick hem onmouseover atandığında, hangi sırayla giderseniz o event çalışır
+
+//?METHOD-4 ( sadece js de yazılır)-AddEventListener 2.yol
+//?---------------------------------------------------------------
+
+btn.addEventListener("click", () => {
+    document.querySelector("body").style.backgroundImage =
+        "linear-gradient(to right, purple, gray)";
+
+    btn.textContent = "SEARCH";
+    btn.style.fontSize = "30px";
+    header.style.color = "aquamarine";
+});
