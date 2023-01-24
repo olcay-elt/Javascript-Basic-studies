@@ -157,6 +157,15 @@ document.querySelector(".btn").onclick = () => {
     // console.log(renkler[rastgele]);
     document.querySelector("body").style.backgroundColor = renkler[rastgele]
 
+    //* Assignments 1
+    document.querySelector(".renkler").textContent = renkler[rastgele]
+    document.querySelector("h1").style.color = renkler[rastgele]
+
+    //* Assignments 2
+
+    const rastgele2 = Math.floor(Math.random() * renkler.length);
+
+    document.querySelector(".H1").style.backgroundColor = renkler[rastgele2]
 
     // 1-seçilen renk h1 in içindeki span de yazsın ve onun da color u seçilen renkte olsun
     // 2-h1 in backgroundColor u için random sayıyla diziden bir renk daha seçip background rengi verilsin
@@ -164,11 +173,7 @@ document.querySelector(".btn").onclick = () => {
 
 
 
-//* Assignments 2
 
-const rastgele2 = Math.floor(Math.random() * renkler.length);
-
-document.querySelector(".H1").style.backgroundColor = renkler[rastgele2]
 
 
 
