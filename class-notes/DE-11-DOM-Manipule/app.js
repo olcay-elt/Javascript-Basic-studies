@@ -25,7 +25,14 @@ document.querySelector(".bagla").onclick = () => {
 document.querySelector(".konus").onclick = () => {
     resim.src = "./img/telefon.gif"
     ses.pause()
-
 }
 
-//* bilgi butonuna tiklandiginda
+//* mouse ile resmin üzerine gelince 
+resim.onmouseover = () => {
+    resim.src = "./img/aslan1.jpeg"
+}
+
+//* mouse ile resmin üzerinden ayrilinca
+resim.addEventListener("mouseout", () => {
+    resim.src = "./img/aslan2.jpeg"
+})
