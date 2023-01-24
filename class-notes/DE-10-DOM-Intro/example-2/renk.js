@@ -172,3 +172,4 @@ document.querySelector(".H1").style.backgroundColor = renkler[rastgele2]
 
 
 
+
