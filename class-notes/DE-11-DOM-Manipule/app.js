@@ -43,3 +43,14 @@ resim.onmouseout = () => {
 // resim.addEventListener("mouseout", () => {
 //   resim.src = "./img/aslan2.jpeg";
 // });
+
+
+//? HTML'de input-div'in altına yeni bir H1 elemanı olusturalım.
+
+//? a ismiyle class atayalım
+
+//? Programlama Dilleri şeklinde bir text oluşturalım
+
+ //?h1 elementi için oluşan text i child yapalım
+ 
+ //?input-div'in sonrasina h1'i ekliyoruz.
