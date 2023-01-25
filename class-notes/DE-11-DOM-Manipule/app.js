@@ -73,7 +73,7 @@ text.onkeyup = () => {
 const bolum = document.querySelector("section");
 // console.log(bolum.innerHTML);
 bolum.innerHTML =
-    `<h1 class="a text-center"> Programlama Dilleri</h1>` + bolum.innerHTML;
+    `<h1 class="a text-center"> Programming Languages</h1>` + bolum.innerHTML;
 
 //! ekle butonuna basıldığında input a girilen değerler ul liste me eklensin
 //*UZUN YOL
