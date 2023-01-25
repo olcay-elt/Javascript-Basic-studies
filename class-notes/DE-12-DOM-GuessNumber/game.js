@@ -15,3 +15,9 @@ let enYuksekSkor = 0;
 document.querySelector(".check").onclick = () => {
 
 }
+
+//! Again butonuna basıldığında oyun yeniden kurulsun,arka ekran #2d3436 olsun
+
+document.querySelector(".again").onclick = () => {
+    rastgele
+}
