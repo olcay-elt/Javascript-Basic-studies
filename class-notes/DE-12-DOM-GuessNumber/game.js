@@ -10,4 +10,8 @@ let skor = 10
 let enYuksekSkor = 0;
 //enYuksekSkor diye bir değişken atamazsam, dogru tahmindeki enYuksekSkor kontrol kodunda, html deki top-score span inin textContent iyle karşılaştırma yapabiliriz
 
-//! her check butonuna basildiginda olacaklar 
+//! her check butonuna basildiginda olacaklar
+
+document.querySelector(".check").onclick = () => {
+
+}
