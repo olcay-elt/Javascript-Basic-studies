@@ -35,6 +35,10 @@ const showListe = () => {
     listeInput.value = "";
     toplam.textContent = total;
 
+    //! check butonuna basilinca 
+    createCheckButon()
+    //! trash butonuna basilinca
+    createSilButon()
+};
 
-
-}
+const createCheckButon = () => { }
