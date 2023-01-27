@@ -42,3 +42,24 @@ const showListe = () => {
 };
 
 const createCheckButon = () => { }
+
+//! 2.yol
+
+document.querySelector("#todo-ul").onclick = (a) => {
+
+    if (a.target.classList.contains("fa-check")) {
+        if (a.target.parentElement.classList.contains("checked")) {
+            a.target.parentElement.classList.remove("checked");
+            completed -= 1;
+            document.querySelector("#tamamlanan").textContent = completed;
+        } else {
+            a.target.parentElement.classList.add("checked");
+            completed += 1;
+            document.querySelector("#tamamlanan").textContent = completed;
+        }
+
+    }
+
+
+}
+}
