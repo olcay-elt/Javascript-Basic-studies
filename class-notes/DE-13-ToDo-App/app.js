@@ -1,64 +1,48 @@
-let liste = [];
+document.querySelector("#todo-button").onclick = () => {
+    const list = document.querySelector("#todo-ul");
+    const works = document.querySelector("#todo-input");
 
-let total = 0;
+    list.innerHTML += `
+        <li class="todo-li">
+            <span>
+                <i class="fas fa-check"></i>
+                <span class="listText">${works.value}</span>
+            </span>
+    
+            <i class="fa-solid fa-trash-can"></i>
+        </li>
+    `
 
-let completed = 0;
+    document.querySelector("#toplam").innerHTML = list.children.length;
 
-const listeInput = document.querySelector("#todo-input");
+    works.value = "";
 
-const listeUl = document.querySelector("#todo-ul");
+    document.querySelectorAll('.fa-trash-can').forEach(listItem => {
+        listItem.addEventListener('click', function () {
+            var li = this.parentNode
+            li.remove();
+            document.querySelector("#toplam").innerHTML = list.children.length;
+            document.getElementById('tamamlanan').innerHTML = document.querySelectorAll('.completed').length
+        })
+    })
 
-const listeButon = document.querySelector("#todo-button");
+    document.querySelectorAll('.fa-check').forEach(listItem => {
+        let toggle = false // tamamlanmayan
 
-const toplam = document.querySelector("#toplam");
+        listItem.addEventListener('click', function () {
+            if (!toggle) {
+                const text = this.parentNode.querySelector('.listText')
+                text.innerHTML = `<del class="completed">${text.innerText}</del>`
 
-//!Add butonuna basıldığında
+                document.getElementById('tamamlanan').innerHTML = document.querySelectorAll('.completed').length
+                toggle = !toggle
+            } else {
+                const text = this.parentNode.querySelector('.listText')
+                text.innerHTML = `${text.innerText}`
 
-listeButon.onclick = () => {
-    if (!listeInput.value) {
-        alert("lütfen bir not giriniz");
-    } else if (liste.includes(listeInput.value)) {
-        return;
-    } else {
-        liste.push(listeInput.value);
-        total += 1
-        showListe()
-    }
-};
-
-const showListe = () => {
-    listeUl.innerHTML += `<li>
-<i class="fa fa-check fa-lg"></i>
-<p> ${listeInput.value} </p>
-<i class="fa fa-trash fa-lg" ></i>
-</li>`;
-    listeInput.value = "";
-    toplam.textContent = total;
-
-    //! check butonuna basilinca 
-    createCheckButon()
-    //! trash butonuna basilinca
-    createSilButon()
-};
-
-const createCheckButon = () => { }
-
-//! 2.yol
-
-document.querySelector("#todo-ul").onclick = (a) => {
-
-    if (a.target.classList.contains("fa-check")) {
-        if (a.target.parentElement.classList.contains("checked")) {
-            a.target.parentElement.classList.remove("checked");
-            completed -= 1;
-            document.querySelector("#tamamlanan").textContent = completed;
-        } else {
-            a.target.parentElement.classList.add("checked");
-            completed += 1;
-            document.querySelector("#tamamlanan").textContent = completed;
-        }
-
-    }
-
-
+                document.getElementById('tamamlanan').innerHTML = document.querySelectorAll('.completed').length
+                toggle = !toggle
+            }
+        })
+    })
 }
