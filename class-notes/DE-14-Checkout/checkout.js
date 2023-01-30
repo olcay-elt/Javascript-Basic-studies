@@ -5,13 +5,14 @@
 const kargo = 15.0;
 const vergi = 0.18;
 
-
 let sepettekiler = [
     { name: "Vintage Backpack", price: 34.99, adet: 1, img: "./img/photo1.png" },
     { name: "Levi Shoes", price: 40.99, adet: 1, img: "./img/photo2.png" },
     { name: "Antique Clock", price: 69.99, adet: 1, img: "./img/photo3.jpg" },
 ];
 //!EKRANA BASTIRMA
+
+
 sepettekiler.forEach((ürün) => {
     document.querySelector("#urun-rowlari").innerHTML +=
 
@@ -34,7 +35,7 @@ sepettekiler.forEach((ürün) => {
                       <span class="indirim-price">${(ürün.price * 0.7).toFixed(
             2
         )}</span>
-                      <span class="h5 text-dark text-decoration-line-through">${} </span>
+                      <span class="h5 text-dark text-decoration-line-through">${ürün.price} </span>
                     </p>
                   </div>
 
@@ -67,7 +68,7 @@ sepettekiler.forEach((ürün) => {
     </div>
   </div>
 </div>`;
-});
+})
 
 //!todo browser da en alttaki total kısmı
 document.querySelector("#odeme-table").innerHTML = `<table class="table">
