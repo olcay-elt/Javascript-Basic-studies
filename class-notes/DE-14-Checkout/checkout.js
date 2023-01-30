@@ -10,11 +10,13 @@ let sepettekiler = [
     { name: "Levi Shoes", price: 40.99, adet: 1, img: "./img/photo2.png" },
     { name: "Antique Clock", price: 69.99, adet: 1, img: "./img/photo3.jpg" },
 ];
+
+let urunler = document.querySelector("#urun-rowlari")
 //!EKRANA BASTIRMA
 
 
 sepettekiler.forEach((ürün) => {
-    document.querySelector("#urun-rowlari").innerHTML +=
+    urunler.innerHTML +=
 
         `<div class="card mb-3" style="max-width: 540px;">
 
