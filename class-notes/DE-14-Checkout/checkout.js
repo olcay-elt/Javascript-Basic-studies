@@ -4,7 +4,7 @@
 //!table da kullanılacak değişkenler
 const kargo = 15.0;
 const vergi = 0.18;
-let urunler = document.querySelector("#urun-rowlari")
+
 
 let sepettekiler = [
     { name: "Vintage Backpack", price: 34.99, adet: 1, img: "./img/photo1.png" },
@@ -13,6 +13,7 @@ let sepettekiler = [
 ];
 //!EKRANA BASTIRMA
 sepettekiler.forEach((ürün) => {
+    let urunler = document.querySelector("#urun-rowlari")
     urunler.innerHTML +=
 
         `<div class="card mb-3" style="max-width: 540px;">
