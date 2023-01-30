@@ -73,7 +73,7 @@ sepettekiler.forEach((ürün) => {
 })
 
 //!todo browser da en alttaki total kısmı
-document.querySelector("#odeme-table").innerHTML += `<table class="table">
+document.querySelector("#odeme-table").innerHTML = `<table class="table">
             <tbody>
               <tr class="text-end">
                 <th class="text-start">Aratoplam</th>
@@ -95,27 +95,12 @@ document.querySelector("#odeme-table").innerHTML += `<table class="table">
           </table>`;
 
 
-
 //!SİLME
-document.querySelectorAll(".remove-ürün").forEach((a) => {
-
+document.querySelectorAll(".remove-ürün").forEach(() => {
     //!ekrandan sildik
-    a.onclick = () => {
-        //!diziden sildik
 
-        sepettekiler = sepettekiler.filter((e) => e.name !== a.closest(".card").querySelector("h5").textContent);
+    //!diziden sildik
 
-
-        a.closest(".card").querySelector("div").remove();
-        refreshTable();
-
-        console.log(sepettekiler);
-
-
-
-
-
-    }
 });
 
 
@@ -131,120 +116,49 @@ document.querySelectorAll(".remove-ürün").forEach((a) => {
 document.querySelectorAll(".minus").forEach((minus) => {
 
 
-
     minus.onclick = () => {
         //!minus adet değişimini ekrana bastır
-        if (minus.closest(".card").querySelector("#ürün-adet").textContent > 0) {
-            minus.closest(".card").querySelector("#ürün-adet").textContent--
-        }
-
-
-        minus.closest(".card").querySelector(".ürün-toplam").textContent = (minus.closest(".card").querySelector("#ürün-adet").textContent * minus.closest(".card").querySelector(".indirim-price").textContent).toFixed(2)
-
-
 
 
         //!sepettekiler de adet değişimini yapalım 
 
-
         sepettekiler.map((ürün) => {
-            if (ürün.name ==
-                minus.closest(".card").querySelector("h5").textContent) {
-                ürün.adet = Number(minus.closest(".card").querySelector("#ürün-adet").textContent);
-
-                console.log(sepettekiler);
-                //!ürün toplam ı ekrana bastırma (her ürün card ında var)
-                refreshTable()
-
-            }
-        })
-    }
-})
 
 
-
-//! plus a basınca minus a benzer işlemler
-document.querySelectorAll(".plus").forEach((plus) => {
-
-    //!plus adet değişimini ekrana bastır
-    plus.onclick = () => {
-
-        plus.closest(".card").querySelector("#ürün-adet").textContent++
-
-        //!sepettekiler de adet değişimini yapalım 
-
-        sepettekiler.map((ürün) => {
-            if (ürün.name ==
-                plus.closest(".card").querySelector("h5").textContent) {
-                ürün.adet = Number(plus.closest(".card").querySelector("#ürün-adet").textContent);
+            //!ürün toplam ı ekrana bastırma (her ürün card ında var)
 
 
 
 
-            }
+
+            //! plus a basınca minus a benzer işlemler
+            document.querySelectorAll(".plus").forEach((plus) => {
+                //!minus adet değişimini ekrana bastır
+
+                //!dizideki adet i  güncelle
+
+                //!ürün toplam ekrana bastırması. her üründe olan toplam kısmı
+
+
+
+            });
         })
 
-        plus.closest(".card").querySelector(".ürün-toplam").textContent = (plus.closest(".card").querySelector("#ürün-adet").textContent * plus.closest(".card").querySelector(".indirim-price").textContent).toFixed(2)
 
-        refreshTable()
-        console.log(sepettekiler);
+        //******buradan altı table kısmı */
+        //! Card toplam değerlerini hesaplayın ve güncelleyin
 
+        //! her bir card daki ürün toplam kısımları, buradaki fiyatları toplayıp ara toplam bulmalıyız (table a bastırmak için)
+        const ürünToplam = document.querySelectorAll(".ürün-toplam");
+        //!  Bir NodeListnesne, bir belgeden çıkarılan düğümlerin bir listesidir
 
-    }
-})
+        //? araToplam= en alttaki tüm ürünler için vergi kargo hariç sepettekiler fiyatı
 
-//!dizideki adet i  güncelle
+        //*önce hesapla sonra altta browser a (DOM) bastır
 
+        const vergiPrice = araToplam * vergi;
+        const shipping = araToplam > 0 ? kargo : 0;
+        const cardTotal = araToplam + shipping + vergiPrice;
 
-
-
-
-
-//!ürün toplam ekrana bastırması. her üründe olan toplam kısmı
-
-
-
-
-
-
-
-//******buradan altı table kısmı */
-//! Card toplam değerlerini hesaplayın ve güncelleyin
-
-//! her bir card daki ürün toplam kısımları, buradaki fiyatları toplayıp ara toplam bulmalıyız (table a bastırmak için)
-
-
-//!  Bir NodeListnesne, bir belgeden çıkarılan düğümlerin bir listesidir
-
-
-//? araToplam= en alttaki tüm ürünler için vergi kargo hariç sepettekiler fiyatı
-
-//*önce hesapla sonra altta browser a (DOM) bastır
-
-// const vergiPrice = araToplam * vergi;
-// const shipping = araToplam > 0 ? kargo : 0;
-// const cardTotal = araToplam + shipping + vergiPrice;
-
-//!ekrana table kısmına bastır
-
-const refreshTable = function () {
-
-
-    var aratoplam = 0;
-    sepettekiler.forEach((ürün) => {
-        aratoplam += (ürün.adet * ürün.price * 0.7);
-
-
-    })
-    // aratoplam.toFixed(2);
-    // console.log("Ara Toplam:" + aratoplam);
-    document.querySelector(".aratoplam").textContent = aratoplam.toFixed(2);
-    document.querySelector(".vergi").textContent = (aratoplam * vergi).toFixed(2);
-    document.querySelector(".kargo").textContent = aratoplam == 0 ? 0 : kargo;
-    document.querySelector(".toplam").textContent = aratoplam == 0 ? 0 : (aratoplam + kargo + (aratoplam * vergi)).toFixed(2)
-
-
-
-}
-
+  //!ekrana table kısmına bastır
 
