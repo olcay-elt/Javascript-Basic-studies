@@ -13,8 +13,7 @@ let sepettekiler = [
 ];
 //!EKRANA BASTIRMA
 sepettekiler.forEach((ürün) => {
-    let urunler = document.querySelector("#urun-rowlari")
-    urunler.innerHTML +=
+    document.querySelector("#urun-rowlari").innerHTML +=
 
         `<div class="card mb-3" style="max-width: 540px;">
 
