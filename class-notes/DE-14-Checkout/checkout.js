@@ -25,21 +25,21 @@ sepettekiler.forEach((ürün) => {
   <div class="row g-0">
 
     <div class="col-md-5">
-      <img src= ${ürün.img}  class="w-100 rounded-start" alt="...">
+      <img src= ${img}  class="w-100 rounded-start" alt="...">
     </div>
 
     <div class="col-md-7">
 
       <div class="card-body">
       
-        <h5 class="card-title">${ürün.name}</h5>
+        <h5 class="card-title">${name}</h5>
         
              <div class="ürün-price">
                     <p class="text-warning h2">$
-                      <span class="indirim-price">${(ürün.price * 0.7).toFixed(
+                      <span class="indirim-price">${(price * 0.7).toFixed(
             2
         )}</span>
-                      <span class="h5 text-dark text-decoration-line-through">${ürün.price} </span>
+                      <span class="h5 text-dark text-decoration-line-through">${price} </span>
                     </p>
                   </div>
 
@@ -51,7 +51,7 @@ sepettekiler.forEach((ürün) => {
                       <button class="btn btn-secondary btn-sm minus">
                         <i class="fas fa-minus"></i>
                       </button>
-                      <p class="d-inline mx-4" id="ürün-adet">${ürün.adet}</p>
+                      <p class="d-inline mx-4" id="ürün-adet">${adet}</p>
                       <button class="btn btn-secondary btn-sm plus">
                         <i class="fas fa-plus"></i>
                       </button>
@@ -66,7 +66,7 @@ sepettekiler.forEach((ürün) => {
                   </div>
 
                   <div class="mt-2">
-                    Ürün Toplam: $<span class="ürün-toplam">${(ürün.price * 0.7 * ürün.adet).toFixed(2)}</span>
+                    Ürün Toplam: $<span class="ürün-toplam">${(price * 0.7 * adet).toFixed(2)}</span>
                   </div>
       </div>
     </div>
@@ -95,7 +95,17 @@ document.querySelector("#odeme-table").innerHTML += `<table class="table">
               </tr>
             </tbody>
           </table>`;
+function hesaplaTotal() {
 
+    const ürünToplam = document.querySelectorAll(".ürün-toplam")
+
+    // NodeList ten array e cevirme, [...ürünToplam]=Array.from(ürünToplam)
+    const araToplam = Array.from(ürünToplam).reduce((toplam, item) => toplam + Number(item.textContent.content), 0)
+    console.log(araToplam);
+    document.querySelector(".aratoplam").textContent = araToplam
+    document.querySelector(".vergi").textContent = (araToplam * vergi).toFixed(2)
+    document.querySelector(".kargo").textContent = araToplam > 0 ? kargo : 0
+}
 
 
 //!SİLME
