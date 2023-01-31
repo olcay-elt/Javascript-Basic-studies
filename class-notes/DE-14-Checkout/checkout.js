@@ -11,19 +11,21 @@ let sepettekiler = [
     { name: "Antique Clock", price: 69.99, adet: 1, img: "./img/photo3.jpg" },
 ];
 
-let urunler = document.querySelector("#urun-rowlari")
+
 //!EKRANA BASTIRMA
 
 
 sepettekiler.forEach((ürün) => {
-    urunler.innerHTML +=
+    //! destcration
+    const { name, price, adet, img } = ürün;
+    document.querySelector("#urun-rowlari").innerHTML +=
 
         `<div class="card mb-3" style="max-width: 540px;">
 
   <div class="row g-0">
 
     <div class="col-md-5">
-      <img src= ${ürün.img}  class="img-fluid rounded-start" alt="...">
+      <img src= ${ürün.img}  class="w-100 rounded-start" alt="...">
     </div>
 
     <div class="col-md-7">
