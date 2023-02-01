@@ -18,3 +18,12 @@
 
 //*Senkron Programlama
 //****************************************** */
+const bekle = (ms) => {
+    const start = new Date().getTime();
+    while (new Date().getTime() < start + ms) { }
+};
+console.log("merhaba");
+console.time("timer")
+bekle(3000);
+console.timeEnd("timer1")
+console.log("naber");
