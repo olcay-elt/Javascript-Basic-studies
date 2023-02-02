@@ -213,3 +213,6 @@ function hesaplaTotal() {
         araToplam * vergi
     ).toFixed(2);
 }
+
+
+
