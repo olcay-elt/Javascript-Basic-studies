@@ -24,3 +24,16 @@
 //! JavaScript throw anahtar kelimesi özel hata oluşturmayı sağlar.
 
 //! JavaScript finally anahtar kelimesi hata oluşması veya oluşmaması durumunda (her durumda) çalışacak kodları yazdırmak için kullanılır.
+
+
+
+const veriGetir = async () => {
+    const response = await fetch("https://api.tvmaze.com/search/shows?q=girls");
+
+    const data = await response.json();
+    console.log(data);
+};
+
+
+
+veriGetir();
