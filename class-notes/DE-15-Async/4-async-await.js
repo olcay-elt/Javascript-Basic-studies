@@ -34,6 +34,10 @@ const veriGetir = async () => {
     console.log(data);
 };
 
-
-
 veriGetir();
+
+const ekranaBastir = (data) => {
+    data.forEach((girls) => {
+
+    });
+}
