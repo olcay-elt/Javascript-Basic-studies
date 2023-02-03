@@ -1,20 +1,24 @@
 function EncryptStringAES(text) {
-    if (text != null) {
-        var key = CryptoJS.enc.Utf8.parse('8080808080808080');
-        var iv = CryptoJS.enc.Utf8.parse('8080808080808080');
+    fetch("https://api.openweathermap.org/data/2.5/weather?id={city id}&appid={63fc438a7d15ba8d5a8f8fec5d3706e0}")
+        .then((responsive) => {
+            if (text != null) {
+                var key = CryptoJS.enc.Utf8.parse('8080808080808080');
+                var iv = CryptoJS.enc.Utf8.parse('8080808080808080');
 
-        var encryptedstr = CryptoJS.AES.encrypt(CryptoJS.enc.Utf8.parse(text), key,
-            {
-                keySize: 128,
-                iv: iv,
-                mode: CryptoJS.mode.CBC,
-                padding: CryptoJS.pad.Pkcs7
-            });
-        return encryptedstr;
-    }
+                var encryptedstr = CryptoJS.AES.encrypt(CryptoJS.enc.Utf8.parse(text), key,
+                    {
+                        keySize: 128,
+                        iv: iv,
+                        mode: CryptoJS.mode.CBC,
+                        padding: CryptoJS.pad.Pkcs7
+                    });
+                return encryptedstr;
+            }
+        })
     else {
         return "";
     }
+
 
 }
 
