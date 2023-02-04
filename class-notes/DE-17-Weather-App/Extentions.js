@@ -15,12 +15,16 @@ function EncryptStringAES(text) {
                 return encryptedstr;
             }
         })
-    else {
-        return "";
-    }
+    return "";
 
+    then((data) => showLoading(data));
 
 }
+
+document.querySelector("button").onclick = () => {
+    EncryptStringAES()
+}
+
 
 function DecryptStringAES(text) {
     if (text != null) {
