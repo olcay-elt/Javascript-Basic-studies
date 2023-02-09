@@ -11,17 +11,49 @@
 class Book {
 
     constructor(a, b, c) {
-        this.author = b;
-        this.title = a;
+        this.author = a;
+        this.title = b;
         this.year = c;
-        this.özetFunction = function () {
-            return ` ${this.title} i ${this.year} yılında ${this.author} yazmıştır`;
-        };
+    }
+    özetFunction() {
+        return ` ${this.title} i ${this.year} yılında ${this.author} yazmıştır`;
+    };
+}
+
+//!OVERRİDİNG
+class Dergi extends Book {
+    constructor(author, title, year, d) {
+        super(author, title, year);
+
+        this.mounth = d;
+    }
+    //!overriding yapacağımız fonksiyonu yazalım
+
+    özetFunction() {
+        return ` ${this.title} çok güzel bir yazıdır`;
     }
 }
 
-//!OVERRIDING
+const dergi1 = new Dergi("Einstein", "Stientific Essays", 1900, "september");
 
-class Dergi extends Book {
-    constructor(author, title, year, d)
+console.log(dergi1.özetFunction());
+console.log(dergi1);
+
+//!OVERLOADİNG
+// Diğer programlama dillerinden farklı olarak JavaScript , Function Overloading'i desteklemez . 
+// İşte JavaScript'in Function Overloading i desteklemediğini gösteren küçük bir kod. 
+
+function gel(arg1) {
+    console.log(arg1)
 }
+function gel(arg1, arg2, arg3) {
+    console.log(arg1, arg2, arg3);
+}
+gel("naber")//!naber undefined undefined
+gel("naber", "nasılsın", "iyimisin")//!naber nasılsın iyimisin
+
+// Çıktıdaki "undefined" ifadesinin nedeni şudur: JavaScript'te aynı adla iki işlev tanımlanırsa, son tanımlanan işlev önceki işlevin üzerine yazar.
+// Bu durumda, gel(arg1) öğesinin üzerine gel(arg1,arg2) tarafından yazılmıştır, ancak
+// işleve yalnızca bir Argüman ("naber") ilettik. Bu, ikinci argümanın tanımsız olduğu anlamına gelir, yani ikinci argümanı yazdırmaya çalıştığımızda, “tanımsız” olarak yazdırılır.
+// overloading işlevinin JavaScript'te desteklenmediğini gördük, ancak overloading işlevini kendi başımıza uygulayabiliriz; bu, daha fazla sayıda ve daha fazla türde argüman söz konusu olduğunda oldukça karmaşıktır. Aşağıdaki kod, JavaScript'te overloading işlevinin nasıl uygulanacağını anlamanıza yardımcı olacaktır.
+//*https://www.geeksforgeeks.org/function-overloading-in-javascript/
