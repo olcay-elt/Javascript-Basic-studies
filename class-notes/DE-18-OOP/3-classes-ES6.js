@@ -8,23 +8,39 @@
 
 
 class Book {
+    //*ana yapıyı oluşturduk
     constructor(a, b, c) {
-        this.yazar = a;
-        this.title = b;
-
+        this.author = b;
+        this.title = a;
         this.year = c;
         this.özetFunction = function () {
-            return ` ${this.title} kitabını ${this.yazar} ${this.year} yılında yazmıştır`;
+            return ` ${this.title} i ${this.year} yılında ${this.author} yazmıştır`;
         };
     }
-
+    //?bu alt süslüye yazdıklarımız direk kalıbın prototype alanına gider (ES6 ile biz belirtmeden)
     yilHesapla() {
-        return new Date().getFullYear() - this.year
+        return new Date().getFullYear() - this.year;
     }
-
 }
 
-const book1 = new Book("M.Akif Ersoy", "safahat", 1910)
+const book1 = new Book("safahat", "M.Akif Ersoy", 1910)
 
-console.log(book1)
-console.log(book1.yilHesapla);
+console.log(book1);
+console.log(book1.yilHesapla());
+
+//?INHERİTANCE
+//*Book object inden Dergi object ine kalıp getir
+
+class Dergi extends Book {
+    //!Dergi object inde kullanacağım parametreler (hem atadan gelen hem kendisinden)
+    constructor(author, title, year, d) {
+        //!atadan gelenler(super), super yazdığımız an ES6 sayesinde atanın prototype i de direk gelmiş oldu(bu file ın son satırında çağırdık)
+        super(author, title, year);
+        //!kendisinden oluşanlar
+        this.mounth = d;
+    }
+}
+
+const dergi1 = new Dergi("ömer seyfettin", "kasagı", 1932, "aralik")
+console.log(dergi1);
+console.log(dergi1.yilHesapla());
