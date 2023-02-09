@@ -7,3 +7,21 @@
 //* Polymorphism  object-oriented programming concept li bir programlama kavramıdır,bir variable ın, nesnenin, yada fonksiyonun,birden çok form alma özelliğini ifade eder
 
 //* In the OOP, Polymorphism genellikle  Overloading and Overriding le gerçekleştirilir (overriding=aynı ada sahip iki işlev tanımlarsanız, tanımlanan sonuncusu önceden tanımlanmış sürümü geçersiz kılar ve işleve her çağrı yapıldığında, son tanımlanan işlev yürütülür.)(overloading=overloading demektir, javascriptte böyle denmez, aynı adlarla fonksiyonu işlemek denir ve js  direk overloading i desteklemez, manuel uğraşmak gerekir )
+
+class Book {
+
+    constructor(a, b, c) {
+        this.author = b;
+        this.title = a;
+        this.year = c;
+        this.özetFunction = function () {
+            return ` ${this.title} i ${this.year} yılında ${this.author} yazmıştır`;
+        };
+    }
+}
+
+//!OVERRIDING
+
+class Dergi extends Book {
+    constructor(author, title, year, d)
+}
