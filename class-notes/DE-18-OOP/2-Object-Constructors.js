@@ -49,6 +49,8 @@ function Dergi(yazar, title, year, d) {
     this.mounth = d
 }
 
+Dergi.prototype = Object.create(Book.prototype)
 const dergi1 = new Dergi("Resat Nuri", "yaprak dokumu", 1900, "eylül");
 
 console.log(dergi1);
+console.log(dergi1.tür);
