@@ -11,3 +11,10 @@
 //* Object Constructor
 //! Book ismi büyük harfle,constructor olduğu biz tarafından anlaşılsın diye. anne karnında bebek var doğarsa değeri olur (üstte constructor anne karnındaki bebek, altta book1 oluşturmak=bebeğin doğması)
 //!arrow function this keyword unu desteklemediği için burada function decleration yazımını tercih ettik
+
+function Book() {
+
+
+
+
+}
